@@ -48,6 +48,11 @@ public class TipCalculator {
         System.out.println("Per person cost before tip: " + perPersonCostBeforeTip);
         System.out.println("Tip per person: " + tipPerPerson);
         System.out.println("Total cost per person: " + costPerPerson);
+        System.out.println("-------------------------------- ");
+        System.out.println("Items ordered: ");
+        for(String foods : foodList){
+            System.out.println(foods);
+        }
         totalCost *= 100;
         int totalCostInt = (int)totalCost;
         int quarters = totalCostInt / 25;
@@ -58,7 +63,7 @@ public class TipCalculator {
         remainder %= 5;
         int pennies = remainder;
         System.out.println("The least amount of coins you can pay is " + quarters + " quarters " + dimes + " dimes " + nickels + " nickels " + pennies + " pennies.");
-        System.out.println(foodList);
+
 
 
 
