@@ -19,6 +19,10 @@ public class TipCalculator {
             System.out.print("Enter a cost in dollars and cents, e.g. 12.50 (-1 to end): ");
             cost = scan.nextDouble();
             totalCost += cost;
+            scan.nextLine();
+            if (cost == -1.0) {
+                break;
+            }
             System.out.print("Enter the item: ");
             String add = scan.nextLine();
             foodList.add(add);
