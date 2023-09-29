@@ -8,21 +8,22 @@ public class TipCalculator {
         System.out.println("Welcome to the tip calculator! ");
         System.out.println("How many people are in your group: ");
         int numOfPeople= scan.nextInt();
-        System.out.println("What's the tip percentage? (0-100):");
-        double tipPercentage = scan.nextDouble();
+        System.out.println("What's the tip percentage? (0-100, Whole Number):");
+        int tipPercentage = scan.nextInt();
         double totalCost = 0;
         double cost = 0;
 
         List <String> foodList = new ArrayList<>();
 
         while (cost != -1.0) {
-            System.out.print("Enter a cost in dollars and cents, e.g. 12.50 (-1 to end): ");
+            System.out.print("Enter a cost in dollars and cents, e.g. 12.50 (-1 or -1.0 to end): ");
             cost = scan.nextDouble();
-            totalCost += cost;
-            scan.nextLine();
             if (cost == -1.0) {
                 break;
             }
+            totalCost += cost;
+            scan.nextLine();
+
             System.out.print("Enter the item: ");
             String add = scan.nextLine();
             foodList.add(add);
@@ -53,10 +54,10 @@ public class TipCalculator {
         for(String foods : foodList){
             System.out.println(foods);
         }
-        totalCost *= 100;
-        int totalCostInt = (int)totalCost;
-        int quarters = totalCostInt / 25;
-        int remainder = totalCostInt % 25;
+        billAndTip *= 100;
+        int billAndTipInt = (int)billAndTip;
+        int quarters = billAndTipInt / 25;
+        int remainder = billAndTipInt % 25;
         int dimes = remainder / 10;
         remainder %= 10;
         int nickels = remainder / 5;
