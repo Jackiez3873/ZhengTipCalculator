@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 public class TipCalculator {
     public static void main(String[] args) {
-
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to the tip calculator! ");
         System.out.println("How many people are in your group: ");
@@ -12,11 +11,10 @@ public class TipCalculator {
         int tipPercentage = scan.nextInt();
         double totalCost = 0;
         double cost = 0;
-
+        //list
         List <String> foodList = new ArrayList<>();
         // while loop
         while (cost != -1.0) {
-
             System.out.print("Enter a cost in dollars and cents, e.g. 12.50 (-1 or -1.0 to end): ");
             cost = scan.nextDouble();
             if (cost == -1.0) {
@@ -25,13 +23,10 @@ public class TipCalculator {
             }
             totalCost += cost;
             scan.nextLine();
-
             System.out.print("Enter the item: ");
             String add = scan.nextLine();
             foodList.add(add); // stores items in list
-
         }
-
         //rounding to 2 decimal places
         // variables
         totalCost = Math.round(totalCost * 100 ) / 100.0;
@@ -45,7 +40,6 @@ public class TipCalculator {
         tipPerPerson = Math.round(tipPerPerson * 100 ) / 100.0;
         double costPerPerson = billAndTip / numOfPeople;
         costPerPerson = Math.round(costPerPerson * 100 ) / 100.0;
-
         //print statements
         System.out.println("-------------------------------- ");
         System.out.println("Total bill before tip: $" + totalCost);
@@ -61,7 +55,6 @@ public class TipCalculator {
         for(String foods : foodList){
             System.out.println(foods);
         }
-
         // freestyle feature
         billAndTip *= 100;
         int billAndTipInt = (int)billAndTip;
